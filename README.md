@@ -50,6 +50,13 @@ something like this:
 
 ```
 mysql> create database live;
+mysql> create user 'massgateadmin'@'localhost' identified by 'your-password';
+mysql> grant all on live.* to 'massgateadmin'@'localhost';
+mysql> create user 'massgateclient'@'localhost' identified by 'your-password';
+mysql> grant all on live.* to 'massgateclient'@'localhost';
+mysql> flush privileges;
+
+
 mysql> use live;
 Database changed
 mysql> grant all on live.* to 'massgateadmin'@'localhost' identified by 'adminpassword';
