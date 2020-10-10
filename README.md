@@ -56,17 +56,10 @@ mysql> create user 'massgateclient'@'localhost' identified by 'your-password';
 mysql> grant all on live.* to 'massgateclient'@'localhost';
 mysql> flush privileges;
 
-
-mysql> use live;
-Database changed
-mysql> grant all on live.* to 'massgateadmin'@'localhost' identified by 'adminpassword';
-Query OK, 0 rows affected (0.00 sec)
-
-mysql> grant all on live.* to 'massgateclient'@'localhost' identified by 'clientpassword';
-Query OK, 0 rows affected (0.00 sec)
-
 mysql> source share/sql/databasestructure.sql
 ```
+
+Note: I've encountered issues with mysql access under certain systems. You might have to change `localhost` with `%` which is a flag for any host.
 
 In order for Massgate to be able to connect to the database, the hosts
 `writedb.massgate.local` and `readdb.massgate.local` need to point to the
