@@ -1,5 +1,14 @@
 # World in Conflict Massgate
 
+# Personal Notes:
+
+1. Run Massgate and the Webserver via the cmdlets in the repo root. Just double click them. No fancy cmd/powershell stuff. You only get mad trying to go that route.
+2. Go to your mysql installation (e.g. `C:Program Files\Mysql\Mysql5\lib`) and copy the `libmysql.dll` to this repositorie's root.
+3. When running cmake specify the version and build path: `cmake . -G "Visual Studio 14 2015" -B "build"`
+4. In Visual Studio 2015 open the `build/Massgate.sln` file.
+5. Build the whole project (and it will skip the `ALL_BUILD`). Build that one explicitly. (Right Click and build)
+6. MySQL is a bitch on Windows. Download the MySQL5 zip and [install it correctly](https://roytuts.com/installing-mysql-zip-archive-in-windows/). Don't forget the connectors.
+
 # Introduction
 
 Massgate is the central server for the Massive Entertainment game World in 
@@ -105,7 +114,7 @@ and start a server like this:
 
 ```
 cd share\www-root
-python -m SimpleHTTPServer 80
+python -m http.server 80
 ```
 
 ### Running a Dedicated Game Server
