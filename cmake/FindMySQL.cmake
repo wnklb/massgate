@@ -37,6 +37,10 @@ find_path(MYSQL_INCLUDE_DIR
 		"$ENV{PROGRAMFILES}/MySQL/*/include"
 )
 
+#set(MYSQL_INCLUDE_DIR "C:/Program Files/MySQL/MySQL Server 8.0/include")
+set(MYSQL_INCLUDE_DIR "C:/Program Files/MySQL/mysql-5.7.31-win32/include")
+
+
 if(DEFINED MYSQL_LIBRARIES AND NOT DEFINED MYSQL_LIBRARY)
 	set(MYSQL_LIBRARY ${MYSQL_LIBRARIES})
 else()
